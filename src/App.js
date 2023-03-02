@@ -9,14 +9,10 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload..
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div class="container py-4 px-3 mx-auto">
+      <h1>Hello, Bootstrap and Webpack!</h1>
+      <button class="btn btn-primary">Primary button</button>
+    </div>
       </header>
     </div>
   );
