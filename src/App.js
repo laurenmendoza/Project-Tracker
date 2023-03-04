@@ -5,10 +5,10 @@ import {nanoid} from 'nanoid'
 
 function App() {
 
-  const [items, setItems] = React.useState(testItems())
+  const [items, setItems] = React.useState(defaultItems())
 
   //create three default items
-  function testItems() {
+  function defaultItems() {
     const tasks = ["cleaning","reading","eating"]
     const items = tasks.map(task => (
       {
@@ -20,13 +20,10 @@ function App() {
     return items
   }
 
-  //onchange handler
   function handleChange(event, id) {
-    // console.log(event.target.value)
     setItems(oldItems => {
       return oldItems.map(item => {
         if(item.id === id){
-          console.log(items)
           item.value = event.target.value
         }
         return item
@@ -34,7 +31,6 @@ function App() {
     })
   }
 
-  //jsx items
   const itemElements = items.map(item => (
     <ListItem 
       value={item.value}
