@@ -7,6 +7,7 @@ function App() {
 
   const [items, setItems] = React.useState(testItems())
 
+  //create three default items
   function testItems() {
     const tasks = ["cleaning","reading","eating"]
     const items = tasks.map(task => (
@@ -19,11 +20,28 @@ function App() {
     return items
   }
 
+  //onchange handler
+  function handleChange(event, id) {
+    // console.log(event.target.value)
+    setItems(oldItems => {
+      return oldItems.map(item => {
+        if(item.id === id){
+          console.log(items)
+          item.value = event.target.value
+        }
+        return item
+      })
+    })
+  }
+
+  //jsx items
   const itemElements = items.map(item => (
     <ListItem 
       value={item.value}
       checked={item.checked}
       key={item.id}
+      id={item.id}
+      handleChange={handleChange}
     />
   ))
 
