@@ -25,11 +25,6 @@ function App() {
     setItems(prevItems => {
       return prevItems.map(item => {
         if(item.id === id){
-          // if(type === "checkbox"){
-          //   item.checked = checked
-          // } else {
-          //   item.value = value
-          // }
           type === "checkbox" ? item.checked = checked : item.value = value
         }
         return item
