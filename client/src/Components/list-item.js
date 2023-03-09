@@ -5,6 +5,8 @@ export default function ListItem(props){
 		<div className="list--item">
 			<input 
 				type="checkbox"
+				checked={props.checked}
+				onChange={(event)=>{props.handleChange(event,props.id)}}
 			/>
 			<input 
 				type="text"

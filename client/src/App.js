@@ -21,10 +21,16 @@ function App() {
   }
 
   function handleChange(event, id) {
-    setItems(oldItems => {
-      return oldItems.map(item => {
+    const {value, type, checked} = event.target
+    setItems(prevItems => {
+      return prevItems.map(item => {
         if(item.id === id){
-          item.value = event.target.value
+          // if(type === "checkbox"){
+          //   item.checked = checked
+          // } else {
+          //   item.value = value
+          // }
+          type === "checkbox" ? item.checked = checked : item.value = value
         }
         return item
       })
